@@ -41,10 +41,8 @@ void Qawaii::createObjects() {
 	trayicon->setVisible(true);
 	
 	QHBoxLayout *source = new QHBoxLayout;
-		//source_edit = new QLineEdit("http://125.160.17.21:8012"); // Rajawali radio (Indonesia)
-		//source_edit = new QLineEdit("http://125.160.17.21:8300"); // MQFM (Indonesia)
-		//source_edit = new QLineEdit("http://dialup.kawaii-radio.net/"); // Kawaii radio (Japan)
-		source_edit = new QLineEdit("http://sc.jsmart.web.id:8028"); // SmartCommunity radio (Indonesia)
+		//source_edit = new QLineEdit("http://dialup.kawaii-radio.net/"); // Kawaii radio (Japan) // dead!
+		source_edit = new QLineEdit("http://175.103.49.43:8000/");
 		set_source_button = new QPushButton("Play");
 		source->addWidget(source_edit);
 		source->addWidget(set_source_button);
