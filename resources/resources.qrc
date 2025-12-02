@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/translations">
+        <file>translations/qawaii_ru.ts</file>
+        <file>translations/qawaii_en.ts</file>
+    </qresource>
+</RCC>
+

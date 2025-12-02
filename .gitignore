@@ -50,3 +50,5 @@ ui_*.h
 # Debug
 *.dSYM/
 
+# Prompt
+prompt.txt
