@@ -23,6 +23,19 @@ make
 3. Нажмите Configure Project
 4. Запустите сборку (Ctrl+B)
 
+## Запуск тестов
+
+Для запуска тестов используйте CTest или напрямую исполняемый файл теста:
+
+```bash
+cd build
+ctest                    # Запуск всех тестов через CTest
+./TestSQLiteDriver       # Прямой запуск тестов SQLite драйвера
+./TestSQLiteDriver -v2   # Подробный вывод тестов
+```
+
+Текущий статус тестов: **✅ Все 18 тестов проходят успешно**
+
 ## Структура проекта
 
 - `src/core/models/` - Модели данных (Note, Folder)
@@ -30,6 +43,7 @@ make
 - `src/core/services/` - Бизнес-логика (NotesManager, SyncService, MigrationService)
 - `src/ui/` - UI компоненты
 - `resources/` - Ресурсы и файлы локализации
+- `tests/` - Модульные тесты для драйверов хранилища
 
 ## Текущий статус
 

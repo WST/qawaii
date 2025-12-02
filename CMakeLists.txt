@@ -113,3 +113,29 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(${PROJECT_NAME} PRIVATE QT_QML_DEBUG)
 endif()
 
+# ============================================
+# Тесты
+# ============================================
+enable_testing()
+
+# Поиск Qt Test
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Test)
+
+# Тесты для SQLiteDriver
+add_executable(TestSQLiteDriver
+    tests/TestSQLiteDriver.cpp
+    src/core/storage/SQLiteDriver.cpp
+    src/core/storage/StorageDriver.cpp
+    src/core/models/Folder.cpp
+    src/core/models/Note.cpp
+)
+
+target_link_libraries(TestSQLiteDriver PRIVATE
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Sql
+    Qt${QT_VERSION_MAJOR}::Test
+)
+
+# Добавляем тест в CTest
+add_test(NAME SQLiteDriverTests COMMAND TestSQLiteDriver)
+

@@ -2,6 +2,7 @@
 #define SQLITEDRIVER_H
 
 #include "StorageDriver.h"
+#include <QSqlDatabase>
 
 class SQLiteDriver : public StorageDriver
 {
@@ -39,8 +40,10 @@ public:
     bool rollbackTransaction() override;
 
 private:
-    class Private;
-    Private *d;
+    bool createSchema();
+    QString getDatabasePath() const;
+    QSqlDatabase m_database;
+    QString m_connectionName;
 };
 
 #endif // SQLITEDRIVER_H
